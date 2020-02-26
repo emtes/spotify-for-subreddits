@@ -1,0 +1,25 @@
+{
+  "name": "spotify-for-subreddits",
+  "version": "1.0.0",
+  "description": "web application for finding reddit communities based on information from user's spotify",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emtes/spotify-for-subreddits.git"
+  },
+  "author": "Mark Griffith, Enmanuel de la Nuez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emtes/spotify-for-subreddits/issues"
+  },
+  "homepage": "https://github.com/emtes/spotify-for-subreddits#readme",
+  "dependencies": {
+    "prettier": "^1.19.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
