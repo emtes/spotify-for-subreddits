@@ -21,8 +21,8 @@ app.listen(PORT, () => {
   console.log(`App is Live on Port ${PORT}...`);
 });
 
-let clientId = 'put-id-here',
-  clientSecret = 'put-secret-here';
+let clientId = 'b210893e3a014b3ab0c3394befe7d80f',
+  clientSecret = 'fa81079f55f54da580e8fcaba86bf8ba';
 
 // Create the api object with the credentials
 let spotifyApi = new SpotifyWebApi({
@@ -30,6 +30,7 @@ let spotifyApi = new SpotifyWebApi({
   clientSecret: clientSecret
 });
 
+console.log(spotifyApi)
 // Retrieve an access token.
 spotifyApi.clientCredentialsGrant().then(
   function(data) {
@@ -44,4 +45,28 @@ spotifyApi.clientCredentialsGrant().then(
   function(err) {
     console.log('Something went wrong when retrieving an access token', err);
   }
-);
+)
+
+//Song lyrics request
+const getSongLyrics = (song, artist) =>{
+  fetch(`https://api.lyrics.ovh/v1/${song}/${artist}`)
+  	.then(info => info.json())
+  	.then(song => console.log(song.lyrics))
+ }
+ getSongLyrics('Coldplay','Adventure of a Lifetime')
+
+ const makeRequest =  async (method,url,data) =>{
+	const response = await fetch(url, {
+		method: method,
+		body: JSON.stringify({
+			data: data
+		}),
+		headers:{
+			'Content-Type': ' application/json'
+		}
+	})
+
+
+
+
+
